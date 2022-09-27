@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sy_blog?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: 123456
+  application:
+    name: syblog
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher # ??SpringBoot?Swagger??????
+  redis:
+    host: 192.168.110.100
+    port: 6379
+    password: 123456
+    lettuce:
+      pool:
+        max-wait: 100 # ??????
+        max-active: 8 # ?????
+        min-idle: 0 # ??????
+        max-idle: 8 # ??????
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8081 # ?????
+  servlet:
+    context-path: "/api" # ???????
